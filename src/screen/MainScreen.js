@@ -37,8 +37,7 @@ export default function MainScreen() {
     const [playing, toggle] = useAudio(audio);
     const [currenting, setCurrenting] = useState(7);
     const [students, setStudents] = useState([]);
-    const { height, width } = useWindowDimensions();
-    const [mobileState, setMobileState] = useState(false)
+    const {  width } = useWindowDimensions();
     
     
     //useEffect
@@ -59,13 +58,13 @@ export default function MainScreen() {
         }
 
         fetchData()
-        const realTimeId = setInterval(() => {
-            fetchData()
+        // const realTimeId = setInterval(() => {
+        //     fetchData()
                 
-            }, 10000);
-            return () => {
-                clearInterval(realTimeId)
-            }
+        //     }, 10000);
+        //     return () => {
+        //         clearInterval(realTimeId)
+        //     }
     }, [])
 
     const tl = useRef();
@@ -158,6 +157,7 @@ export default function MainScreen() {
                 {/* <button onClick={toggle}>{playing ? "Pause" : "Play"}</button> */}
                 <img className='audio-btn' src={playing ? pauseBtn : playBtn}></img>
             </div>
+            <div style={{opacity : state ? 0: 1}} className='goon'><p>GO ON LAND</p></div>
             {/* 6 area */}
             <ButterFly top = {0} left  = {0} z ={ 400} />
             <ButterFly top = '50%' left  = '50%' z ={600}  rotateY = {180} rotateX = {0}/>

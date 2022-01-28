@@ -9,6 +9,27 @@
     cursor: pointer;
     z-index: 1;
     // animation: flowerAnimate 2s linear infinite;
+
+    .flower-number{
+        width: 40px;
+        height: 40px;
+        background-image: url('../asset//images/rock.svg');
+        background-position: 50% 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        border-radius: 5px;
+        line-height: 40px;
+        font-weight: normal;
+        position: absolute;
+        bottom: 5%;
+        left: 20%;
+        color: #ffff;
+        font-weight: 500;
+        text-shadow: 1px 1px 2px #7b818f;
+        text-align: center;
+    }
+
+
     @include breakpoint(mobile){
         width: 100px;
         height: 100px;
@@ -17,7 +38,7 @@
         width: 100%;
         height: 100%;
         position: relative;
-        background-image: url('../asset/images/trunk.svg');
+        background-image: url('../asset/images/trunk2.svg');
         background-repeat: no-repeat;
         background-size: contain;
         background-position: 50% 50%;

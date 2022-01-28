@@ -1,5 +1,6 @@
 import React, {useRef, useEffect} from 'react';
 import butterfly from '../../asset/gif/butterfly3.gif'
+import '../../scss/mainscreen.scss'
 //Gsap
 import  {gsap} from "gsap";
 

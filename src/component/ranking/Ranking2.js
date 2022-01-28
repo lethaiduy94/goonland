@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react'
 import Particles from "react-tsparticles";
 import axios from 'axios'
 import '../../scss/raking.scss'
+
+
 import flower from '../../asset/flower/5_flower_left.svg'
 import flower2 from '../../asset/flower/5_flower_right.svg'
 import flower3 from '../../asset/leaf/5_leaf_left.svg'
@@ -15,6 +17,10 @@ export default function Ranking() {
     //useRef
     const [students, setStudents] = useState([])
     const [students2, setStudents2] = useState([])
+    const [open1, setOpen1] = useState(false)
+    const [open2, setOpen2] = useState(false)
+    const [open3, setOpen3] = useState(false)
+
     useEffect(() => {
         const fetchData = async () =>{
 
@@ -81,7 +87,7 @@ export default function Ranking() {
                 <div className='students-box'>
                     {students.slice(0,3).map((student, index) =>{
                         return(
-                            <li key={student.id}>
+                            <li style={{opacity: index === 0 && open1 ? 1 : index !== 0 ? 1 : 0}} key={student.id}>
                                 <p className='player-number'>{index + 1}</p>
                                 <p className='player-name'>{student.name}</p>
                                 <p className='player-score'>{student.total}</p>
@@ -102,7 +108,7 @@ export default function Ranking() {
                 <div className='students-box'>
                     {students2.slice(0,3).map((student, index) =>{
                         return(
-                            <li key={student.id}>
+                            <li style={{opacity: index === 0 && open2 ? 1 : index !== 0 ? 1 : 0}} key={student.id}>
                                 <p className='player-number'>{index + 1}</p>
                                 <p className='player-name'>{student.name}</p>
                                 <p className='player-score'>{student.total}</p>
@@ -113,10 +119,23 @@ export default function Ranking() {
             )
         }
     }
+
+    const handleOpen1 = () =>{
+        setOpen1(true)
+    }
+    const handleOpen2 = () =>{
+        setOpen2(true)
+    }
+    const handleOpen3 = () =>{
+        setOpen3(!open3)
+    }
     return (
         <div className='ranking-wrap'>
             <h1 className='ranking-title'>今までの合計点数ランキング</h1>
-            <div className='ranking-container'>
+            <div onClick={() => handleOpen3()} className='ranking-event'>
+                スペシャルイベント
+            </div>
+            <div style={{opacity : open3 ? 1 : 0}} className='ranking-container'>
                 
                 <div className='ranking-container-box'>
                     <h1 className ='ranking-header'>一年生</h1>
@@ -126,7 +145,7 @@ export default function Ranking() {
                           {loadStudents()}
                         </ul>
                     </div>
-                    {/* <div className='ranking-team'>一年生</div> */}
+                    <div onClick={handleOpen1} className='ranking-team'>発表</div>
 
                 </div>
                 <div className='ranking-container-box'>
@@ -139,7 +158,7 @@ export default function Ranking() {
                             {loadStudents2()}
                         </ul>
                     </div>
-                    {/* <div className='ranking-team'>二年生</div> */}
+                    <div onClick={handleOpen2} className='ranking-team'>発表</div>
 
 
                 </div>

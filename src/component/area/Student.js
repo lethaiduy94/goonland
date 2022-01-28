@@ -85,7 +85,7 @@ export default function Student({data, width}) {
     }
     return (
         <div style={{top:student.Coordinate !== null ? `${student.Coordinate.x}%`:randomTop, left: student.Coordinate !== null ? `${student.Coordinate.y}%`:randomLeft}}  className='student'>
-            <Flower modalOpen = {modalOpen} codeAverage={codeAverage} planAverage={planAverage} designAverage = { designAverage} communicationAverage = {communicationAverage} presentationAverage = {presentationAverage} />
+            <Flower number = {student.booth_number} modalOpen = {modalOpen} codeAverage={codeAverage} planAverage={planAverage} designAverage = { designAverage} communicationAverage = {communicationAverage} presentationAverage = {presentationAverage} />
                 <div style={{top: widthMobile > 319 && widthMobile < 426 && student.coordinate_mobile !== null ? `${student.coordinate_mobile.x}%`:'-110%',
                             left: widthMobile > 319 && widthMobile < 426 && student.coordinate_mobile !== null ? `${student.coordinate_mobile.y}%`:'90%'
 

@@ -59,6 +59,30 @@
      object-fit: cover;
 }
 
+.container .goon {
+  position: absolute;
+  width: 100%;
+  top: 60%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: mapAnimate 2s  forwards;
+          animation: mapAnimate 2s  forwards;
+  text-align: center;
+}
+
+.container .goon p {
+  font-size: 150px;
+  font-weight: bolder;
+  background-color: #0f360f;
+  color: transparent;
+  text-shadow: 2px 3px 4px #baeda2;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
+
 .container .butterfly-box {
   width: 50px;
   height: 50px;

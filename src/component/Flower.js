@@ -5,7 +5,8 @@ import initialFlower from '../asset/images/0.png';
 //css
 import  '../scss/flower.scss';
 
-export default function Flower({codeAverage, planAverage, designAverage, communicationAverage, presentationAverage , modalOpen}) {
+export default function Flower({codeAverage, planAverage, designAverage, communicationAverage, presentationAverage , modalOpen, number, state}) {
+    const boothNumber = number;
     const score1 = codeAverage;
     const score2 = presentationAverage;
     const score3 = communicationAverage;
@@ -81,6 +82,10 @@ export default function Flower({codeAverage, planAverage, designAverage, communi
             <input onChange={(e) => setScore5(e.target.value)} value={score5} type='range' min='0' max='5' step= '1' ></input> */}
             
             <div onClick={openModal} ref={flower} className='flower'>
+            <div style={{position: state ? 'relative': 'absolute',
+                        left: state ? '10px' : '20%',
+                        
+                        }} className='flower-number'>{boothNumber}</div>
                 {initial()}
             </div>
         </div>

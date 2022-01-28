@@ -22,6 +22,19 @@ export function comparePlan(a, b) {
     }
     return comparison;
   }
+
+  export function compareBooth(a, b) {
+    const bandA = a.booth_number;
+    const bandB = b.booth_number;
+    
+    let comparison = 0;
+    if (bandA > bandB) {
+      comparison = 1;
+    } else if (bandA < bandB) {
+      comparison = -1;
+    }
+    return comparison;
+  }
   export function comparePresentation(a, b) {
     const bandA = a.total_scores.presentation;
     const bandB = b.total_scores.presentation;

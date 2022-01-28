@@ -28,8 +28,10 @@
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  -webkit-animation: animate 2s ease-in-out forwards;
-          animation: animate 2s ease-in-out forwards;
+  -webkit-animation: animate 1.5s ease-in-out forwards;
+          animation: animate 1.5s ease-in-out forwards;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
 }
 
 .area .area-background .area-background-img {
@@ -52,7 +54,9 @@
 }
 
 .area .area-imgBox.active {
-  opacity: 0;
+  width: 36%;
+  height: 36%;
+  bottom: 35%;
 }
 
 .area .area-img {
