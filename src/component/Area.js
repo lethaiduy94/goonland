@@ -13,9 +13,9 @@ export default function Area(props) {
     const state = props.state;
     const currentArea = props.current;
     const data = props.data;
-    const width = props.width
-    const stateMobile = props.mobileState
-    const [students, setStudents] = useState([])
+    const width = props.width;
+    const [students, setStudents] = useState([]);
+    const areaBackground = props.areaBackground;
 
     useEffect(() => {
         const studentsArray = []
@@ -50,7 +50,7 @@ export default function Area(props) {
 
     const loadData = () =>{
         
-        if((state && currentArea === props.index )|| stateMobile){
+        if(state && currentArea === props.index ){
 
             if (typeof students !== 'undefined' && students.length === 0){
                 return(
@@ -72,11 +72,13 @@ export default function Area(props) {
     }
     return (
         <div onClick={!state ? handleMap : null} ref={props.inerRef} className='area'>
-            {/* <div className='area-background'>
-                <img className='area-background-img' src={background}></img>
-            </div> */}
-            <div className='area-imgBox'>
-                <img className='area-img' src={image}></img>
+            {
+                state && <div className='area-background'>
+                            <img className='area-background-img' src={areaBackground}></img>
+                        </div>
+            }
+            <div className = {!state ? 'area-imgBox': 'area-imgBox active'}>
+                 <img className='area-img' src={image}></img>
             </div>
             { loadData()}
         </div>

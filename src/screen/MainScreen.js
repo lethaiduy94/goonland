@@ -11,6 +11,8 @@ import {useAudio } from '../function/Audio'
 //images
 
 import images from "../asset/images/index";
+import areaBackground  from '../asset/area-background/index';
+
 import flower from '../asset/flower/5_flower_left.svg'
 import flower2 from '../asset/flower/5_flower_right.svg'
 import flower3 from '../asset/leaf/5_leaf_left.svg'
@@ -28,7 +30,7 @@ import ButterFly from '../component/mainscreen/ButterFly';
 import {gsap} from "gsap";
 
 
-const areas = ["食べる","学ぶ","着飾る","遊ぶ","暮らす","伝える"];
+const areas = ["学ぶ","食べる","着飾る","暮らす","遊ぶ","伝える"];
 const mapWidth = 3;
 export default function MainScreen() {
     const [state, setState] =useState(false);
@@ -95,13 +97,7 @@ export default function MainScreen() {
     const mapMove = (index) =>{
         
         const xy = i2xy(index)
-        if(width > 319 && width < 427){
-
-            setMobileState(true)
-        }else{
-            setMobileState(false)
-
-        }
+        
         gsap.to(mainScreen.current,1,{
             x : -xy.x * 100 + 'vw',
             y : -xy.y * 100 + 'vh',
@@ -147,7 +143,6 @@ export default function MainScreen() {
             y : 0 + 'vh',
         })
         setState(false)
-        setMobileState(false)
     }
 
  
@@ -188,7 +183,7 @@ export default function MainScreen() {
                                     current = {currenting}
                                     data = {students}
                                     width = {width}
-                                    mobileState = {mobileState}
+                                    areaBackground = {areaBackground[index]}
                                     >
                                 </Area>
                             

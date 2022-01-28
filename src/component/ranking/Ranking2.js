@@ -119,19 +119,19 @@ export default function Ranking() {
             <div className='ranking-container'>
                 
                 <div className='ranking-container-box'>
-                    <h1 className ='ranking-header'>LEADER BOARD</h1>
-                    <h2 className='ranking-score'>今までの合計点数ランキング</h2>
+                    <h1 className ='ranking-header'>一年生</h1>
+                    {/* <h2 className='ranking-score'>今までの合計点数ランキング</h2> */}
                     <div className='ranking-players'>
                         <ul className='players'>
                           {loadStudents()}
                         </ul>
                     </div>
-                    <div className='ranking-team'>一年生</div>
+                    {/* <div className='ranking-team'>一年生</div> */}
 
                 </div>
                 <div className='ranking-container-box'>
-                    <h1 className='ranking-header'>LEADER BOARD</h1>
-                    <h2 className='ranking-score'>今までの合計点数ランキング</h2>
+                    <h1 className='ranking-header'>二年生</h1>
+                    {/* <h2 className='ranking-score'>今までの合計点数ランキング</h2> */}
                     
 
                     <div className='ranking-players'>
@@ -139,7 +139,7 @@ export default function Ranking() {
                             {loadStudents2()}
                         </ul>
                     </div>
-                    <div className='ranking-team'>二年生</div>
+                    {/* <div className='ranking-team'>二年生</div> */}
 
 
                 </div>
