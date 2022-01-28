@@ -1,0 +1,283 @@
+.flower {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+@media screen and (max-width: 426px) {
+  .flower {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.flower .trunk {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-image: url("../asset/images/trunk.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
+  text-align: center;
+  -webkit-transform-origin: bottom center 5px;
+          transform-origin: bottom center 5px;
+  -webkit-animation: trunkAnimate 5s infinite linear;
+          animation: trunkAnimate 5s infinite linear;
+  -webkit-filter: drop-shadow(2px 1px 3px #327454);
+          filter: drop-shadow(2px 1px 3px #327454);
+}
+
+.flower .trunk .img-initial {
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+}
+
+.flower .trunk img {
+  position: absolute;
+  -webkit-filter: drop-shadow(2px 1px 3px #327454);
+          filter: drop-shadow(2px 1px 3px #327454);
+}
+
+.flower .trunk .flower-left-box {
+  width: 65px;
+  height: 65px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.flower .trunk .flower-left-box .flower-left {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  -webkit-animation: flowerAnimate 2s infinite linear;
+          animation: flowerAnimate 2s infinite linear;
+}
+
+@media screen and (max-width: 426px) {
+  .flower .trunk .flower-left-box {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.flower .trunk .flower-right-box {
+  width: 65px;
+  height: 65px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(80deg);
+          transform: translate(-50%, -50%) rotate(80deg);
+}
+
+.flower .trunk .flower-right-box .flower-right {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  -webkit-animation: flowerAnimate 3s infinite linear;
+          animation: flowerAnimate 3s infinite linear;
+}
+
+@media screen and (max-width: 426px) {
+  .flower .trunk .flower-right-box {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.flower .trunk .leaf-left-box {
+  width: 65px;
+  height: 65px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(-48deg);
+          transform: translate(-50%, -50%) rotate(-48deg);
+}
+
+.flower .trunk .leaf-left-box .leaf-left {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  -webkit-animation: flowerAnimate 1.5s infinite linear;
+          animation: flowerAnimate 1.5s infinite linear;
+}
+
+@media screen and (max-width: 426px) {
+  .flower .trunk .leaf-left-box {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.flower .trunk .leaf-right-box {
+  width: 65px;
+  height: 65px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(80deg);
+          transform: translate(-50%, -50%) rotate(80deg);
+}
+
+.flower .trunk .leaf-right-box .leaf-right {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  -webkit-animation: flowerAnimate 2.5s infinite linear;
+          animation: flowerAnimate 2.5s infinite linear;
+}
+
+@media screen and (max-width: 426px) {
+  .flower .trunk .leaf-right-box {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.flower .trunk .leaf-right2-box {
+  width: 65px;
+  height: 65px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(126deg);
+          transform: translate(-50%, -50%) rotate(126deg);
+}
+
+.flower .trunk .leaf-right2-box .leaf-right2 {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  -webkit-animation: flowerAnimate 2s infinite linear;
+          animation: flowerAnimate 2s infinite linear;
+}
+
+@media screen and (max-width: 426px) {
+  .flower .trunk .leaf-right2-box {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .flower .trunk {
+    width: 50%;
+    height: 50%;
+  }
+}
+
+@-webkit-keyframes flowerAnimate {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  25% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+  50% {
+    -webkit-transform: rotate(3deg);
+            transform: rotate(3deg);
+  }
+  70% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+  80% {
+    -webkit-transform: rotate(1deg);
+            transform: rotate(1deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes flowerAnimate {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  25% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+  50% {
+    -webkit-transform: rotate(3deg);
+            transform: rotate(3deg);
+  }
+  70% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+  80% {
+    -webkit-transform: rotate(1deg);
+            transform: rotate(1deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes trunkAnimate {
+  0% {
+    -webkit-transform: rotate(-1deg);
+            transform: rotate(-1deg);
+  }
+  25% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(1deg);
+            transform: rotate(1deg);
+  }
+  75% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-1deg);
+            transform: rotate(-1deg);
+  }
+}
+
+@keyframes trunkAnimate {
+  0% {
+    -webkit-transform: rotate(-1deg);
+            transform: rotate(-1deg);
+  }
+  25% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(1deg);
+            transform: rotate(1deg);
+  }
+  75% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-1deg);
+            transform: rotate(-1deg);
+  }
+}
+/*# sourceMappingURL=flower.css.map */

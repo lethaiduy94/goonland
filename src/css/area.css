@@ -1,0 +1,260 @@
+.area {
+  width: 100vw;
+  height: 100vh;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.area .area-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.area .area-background .area-background-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.area .area-imgBox {
+  width: 50%;
+  height: 50%;
+  cursor: pointer;
+  position: absolute;
+  bottom: 7%;
+  z-index: 0;
+}
+
+.area .area-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.area .students-box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+  -webkit-transition-delay: 3s;
+          transition-delay: 3s;
+  -webkit-animation: animate 2s ease-in-out forwards;
+          animation: animate 2s ease-in-out forwards;
+  z-index: 1;
+}
+
+.area .students-box .student {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+}
+
+.area .students-box .student .student-infor {
+  display: none;
+  position: absolute;
+  width: 230px;
+  top: -110%;
+  left: 90%;
+  background-color: #ffff;
+  text-align: left;
+  padding: 20px;
+  border-radius: 16px;
+  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transform-origin: center left 5px;
+          transform-origin: center left 5px;
+  z-index: 10;
+}
+
+.area .students-box .student .student-infor::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  left: 0;
+  border-style: solid;
+  border-width: 100px 200px 100px 0;
+  border-color: transparent #ffff transparent transparent;
+  -webkit-transform: rotate(235deg);
+          transform: rotate(235deg);
+  z-index: -1;
+}
+
+@media screen and (max-width: 426px) {
+  .area .students-box .student .student-infor::before {
+    display: none;
+  }
+}
+
+.area .students-box .student .student-infor .student-close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+}
+
+.area .students-box .student .student-infor .student-close:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.area .students-box .student .student-infor .student-close img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.area .students-box .student .student-infor .student-infor-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.area .students-box .student .student-infor .student-infor-header .student-number {
+  -webkit-box-flex: 0.8;
+      -ms-flex: 0.8;
+          flex: 0.8;
+}
+
+.area .students-box .student .student-infor .student-infor-header .student-number span {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: gray;
+  text-align: center;
+  line-height: 50px;
+  font-size: 24px;
+  color: #ffff;
+}
+
+.area .students-box .student .student-infor .student-infor-header .student-name {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.area .students-box .student .student-infor .student-title {
+  margin: 10px auto;
+  font-weight: 600;
+}
+
+.area .students-box .student .student-infor .student-title span {
+  margin-left: 10px;
+  font-weight: normal;
+}
+
+.area .students-box .student .student-infor .student-info-body {
+  position: relative;
+  width: 100%;
+}
+
+.area .students-box .student .student-infor .student-info-body li {
+  list-style: none;
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.area .students-box .student .student-infor .student-info-body li span {
+  font-size: 12px;
+  font-weight: normal;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-left: 5px;
+}
+
+.area .students-box .student .student-infor .student-info-body li p {
+  margin-right: 10px;
+}
+
+.area .students-box .student .student-infor .student-info-body li .score-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.area .students-box .student .student-infor .student-info-body li .score-icon img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.area .students-box .student .student-infor p {
+  font-weight: normal;
+  font-size: 12px;
+  color: #000;
+  display: block;
+}
+
+.area .students-box p {
+  margin: auto;
+  display: block;
+  font-size: 24px;
+  color: #ffff;
+}
+
+@media screen and (max-width: 426px) {
+  .area {
+    font-size: 20px;
+  }
+}
+
+@-webkit-keyframes animate {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=area.css.map */

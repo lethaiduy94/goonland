@@ -1,0 +1,196 @@
+@import "./variables";
+@import "./mixing";
+.container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-image: url('../asset/images/map-background.svg');
+  background-repeat: no-repeat;
+  background-position:50% 50%;
+  background-size: 250% 250%;
+
+  @include breakpoint(mobile){
+    background-image: unset;
+    background-color: #baeda2;
+  }
+  .backBtn {
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    top: 6px;
+    left: 6px;
+    z-index: 10;
+    background-color: #80b55e;
+    padding: 5px;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 3px 0px 2px #599633;
+    cursor: pointer;
+    &:hover{
+      box-shadow: inset 2px 3px 0px 2px #599633;
+    }
+    .backBtn-box{
+      width: 60px;
+      height: 50px;
+      margin: auto;
+      .logo{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  
+
+    .butterfly-box{
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  
+  .audio-background{
+    position:absolute;
+    top: 15%;
+    left: 6px;
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+    @include breakpoint(mobile){
+      display: none;
+    }
+    .audio-btn{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .main-screen {
+    display: flex;
+    width: calc(100vw * 3);
+    height: calc(100vh * 2);
+    position: relative;
+    // text-align: center;
+    flex-wrap: wrap;
+    // background-image: url("../asset//images/map-background.svg");
+    // background-repeat: no-repeat;
+    // background-size: 230% 230%;
+    // background-position:50% 50% ;
+    background: transparent;
+  }
+  .map-container{
+    width: $map-container-width;
+    height: $map-container-height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    background-image: url('../asset//images/map-background.svg');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+    @include breakpoint(mobile){
+      transform: scale(0.7) translate(22%, 28%);
+      display: none;
+    }
+  }
+  .map {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    // border: 1px solid #000;
+    align-items: center;
+    position: absolute;
+    // background-color: #ffff;
+    // background: transparent;
+    margin: auto;
+    z-index: 0;
+    @include breakpoint(mobile){
+      width: $mobile-map-width;
+      height: $mobile-map-height;
+    }
+  }
+
+  .victor{
+    width: 350px;
+    height: 150px;
+    position: absolute;
+    top: -5%;
+    left: 5px;
+    background-image: url('../asset/images/board2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:50% 50%;
+    p{
+      position: absolute;
+      top: 60%;
+      left: 35%;
+      transform: translate(-50%, -50%) ;
+      color: #000;
+      font-weight: bold;
+      font-size: 18px;
+    }
+  }
+
+  .ranking{
+    position: absolute;
+    bottom: 0;
+    left: 6px;
+    width: 100px;
+    height: 100px;
+    background-image: url('../asset/images/crown.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    z-index: 10;
+    &:hover{
+      animation: scaleAnimate 1s linear infinite;
+    }
+
+    }
+  
+    
+  
+}
+@keyframes mapAnimate {
+  0%{
+      opacity: 0;
+  }
+  100%{
+      opacity: 1;
+  }
+}
+@keyframes scaleAnimate {
+  0%{
+    transform: scale(1) rotate(0deg);
+
+  }
+  50%{
+    transform: scale(1.1) rotate(5deg);
+
+  }
+  70%{
+    transform: scale(1.1) rotate(5deg);
+
+  }
+  100%{
+    transform: scale(1) rotate(0deg);
+
+  }
+}

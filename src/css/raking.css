@@ -1,0 +1,304 @@
+.ranking-wrap {
+  max-width: 100%;
+  position: relative;
+  background-image: url("../asset/images/cloud-background3.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.ranking-wrap .ranking-title {
+  background: transparent;
+  text-align: center;
+  padding-top: 20px;
+  color: #fff;
+}
+
+@media screen and (max-width: 426px) {
+  .ranking-wrap .ranking-title {
+    font-size: 18px;
+  }
+}
+
+.ranking-container {
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+  padding: 10px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.ranking-container::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  -webkit-animation: leftMove 20s infinite linear;
+          animation: leftMove 20s infinite linear;
+  background-image: url("../asset//images/clound1.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
+}
+
+.ranking-container::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+  -webkit-animation: rightMove 20s infinite linear;
+          animation: rightMove 20s infinite linear;
+  background-image: url("../asset//images/clound2.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
+}
+
+.ranking-container .ranking-title {
+  position: absolute;
+  top: 5%;
+}
+
+.ranking-container .ranking-container-box {
+  position: relative;
+  max-width: 450px;
+  width: 100%;
+  height: 500px;
+  margin: 100px auto;
+  padding: 20px;
+  text-align: center;
+  border-radius: 26px;
+  z-index: 2;
+  background-image: url("../asset//images/leaderboard-background.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
+}
+
+.ranking-container .ranking-container-box .ranking-header {
+  max-width: 300px;
+  margin: 20px auto;
+  display: block;
+  font-size: 28px;
+  font-weight: bolder;
+  color: #ffc05d;
+  text-shadow: 1px 2px 3px #040302;
+}
+
+@media screen and (max-width: 426px) {
+  .ranking-container .ranking-container-box .ranking-header {
+    position: relative;
+    font-size: 20px;
+    top: 6%;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .ranking-container .ranking-container-box .ranking-header {
+    top: 15%;
+    font-size: 18px;
+  }
+}
+
+.ranking-container .ranking-container-box .ranking-score {
+  max-width: 320px;
+  display: block;
+  margin: 50px auto 20px auto;
+  font-weight: bolder;
+  color: #ffc05d;
+  text-shadow: 1px 1px 3px #040302;
+}
+
+@media screen and (max-width: 426px) {
+  .ranking-container .ranking-container-box .ranking-score {
+    font-size: 18px;
+    margin: 100px auto 20px auto;
+  }
+}
+
+.ranking-container .ranking-container-box .ranking-players {
+  width: 75%;
+  margin: auto;
+  padding: 5px;
+}
+
+.ranking-container .ranking-container-box .ranking-players ul {
+  width: 100%;
+}
+
+.ranking-container .ranking-container-box .ranking-players li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px;
+  border-radius: 6px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 15px auto;
+  -webkit-box-shadow: 1px 2px 3px #898276;
+          box-shadow: 1px 2px 3px #898276;
+  background: #fea21e;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fea21e), to(#f29843));
+  background: linear-gradient(180deg, #fea21e 0%, #f29843 100%);
+}
+
+.ranking-container .ranking-container-box .ranking-players li .player-number {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.ranking-container .ranking-container-box .ranking-players li .player-name {
+  display: block;
+  text-align: left;
+  margin: 0 15px;
+  width: 200px;
+}
+
+.ranking-container .ranking-container-box .ranking-players::-webkit-scrollbar {
+  -webkit-appearance: none;
+          appearance: none;
+}
+
+.ranking-container .ranking-container-box .ranking-players::-webkit-scrollbar-corner {
+  -webkit-appearance: none;
+          appearance: none;
+}
+
+.ranking-container .ranking-container-box .ranking-team {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 200px;
+  height: 100px;
+  background-image: url("../asset/images/kanban.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
+  line-height: 100px;
+  font-size: 28px;
+  font-weight: bolder;
+  color: #f8a942;
+  text-shadow: 1px 2px 3px #040302;
+}
+
+@media screen and (max-width: 376px) {
+  .ranking-container .ranking-container-box .ranking-team {
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+  }
+}
+
+@-webkit-keyframes leftMove {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  25% {
+    -webkit-transform: translateX(25%);
+            transform: translateX(25%);
+  }
+  50% {
+    -webkit-transform: translateX(50%);
+            transform: translateX(50%);
+  }
+  75% {
+    -webkit-transform: translateX(25%);
+            transform: translateX(25%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes leftMove {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  25% {
+    -webkit-transform: translateX(25%);
+            transform: translateX(25%);
+  }
+  50% {
+    -webkit-transform: translateX(50%);
+            transform: translateX(50%);
+  }
+  75% {
+    -webkit-transform: translateX(25%);
+            transform: translateX(25%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes rightMove {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  25% {
+    -webkit-transform: translateX(-25%);
+            transform: translateX(-25%);
+  }
+  50% {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  75% {
+    -webkit-transform: translateX(-25%);
+            transform: translateX(-25%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes rightMove {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  25% {
+    -webkit-transform: translateX(-25%);
+            transform: translateX(-25%);
+  }
+  50% {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  75% {
+    -webkit-transform: translateX(-25%);
+            transform: translateX(-25%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+/*# sourceMappingURL=raking.css.map */

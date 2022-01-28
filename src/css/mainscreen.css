@@ -1,0 +1,262 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-image: url("../asset/images/map-background.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 250% 250%;
+}
+
+@media screen and (max-width: 426px) {
+  .container {
+    background-image: unset;
+    background-color: #baeda2;
+  }
+}
+
+.container .backBtn {
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  top: 6px;
+  left: 6px;
+  z-index: 10;
+  background-color: #80b55e;
+  padding: 5px;
+  border-radius: 50%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 2px 3px 0px 2px #599633;
+          box-shadow: 2px 3px 0px 2px #599633;
+  cursor: pointer;
+}
+
+.container .backBtn:hover {
+  -webkit-box-shadow: inset 2px 3px 0px 2px #599633;
+          box-shadow: inset 2px 3px 0px 2px #599633;
+}
+
+.container .backBtn .backBtn-box {
+  width: 60px;
+  height: 50px;
+  margin: auto;
+}
+
+.container .backBtn .backBtn-box .logo {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.container .butterfly-box {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.container .butterfly-box img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.container .audio-background {
+  position: absolute;
+  top: 15%;
+  left: 6px;
+  z-index: 2;
+  width: 50px;
+  height: 50px;
+}
+
+@media screen and (max-width: 426px) {
+  .container .audio-background {
+    display: none;
+  }
+}
+
+.container .audio-background .audio-btn {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.container .main-screen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: calc(100vw * 3);
+  height: calc(100vh * 2);
+  position: relative;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background: transparent;
+}
+
+.container .map-container {
+  width: 250px;
+  height: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  background-image: url("../asset//images/map-background.svg");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@media screen and (max-width: 426px) {
+  .container .map-container {
+    -webkit-transform: scale(0.7) translate(22%, 28%);
+            transform: scale(0.7) translate(22%, 28%);
+    display: none;
+  }
+}
+
+.container .map {
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  margin: auto;
+  z-index: 0;
+}
+
+@media screen and (max-width: 426px) {
+  .container .map {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.container .victor {
+  width: 350px;
+  height: 150px;
+  position: absolute;
+  top: -5%;
+  left: 5px;
+  background-image: url("../asset/images/board2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.container .victor p {
+  position: absolute;
+  top: 60%;
+  left: 35%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #000;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.container .ranking {
+  position: absolute;
+  bottom: 0;
+  left: 6px;
+  width: 100px;
+  height: 100px;
+  background-image: url("../asset/images/crown.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.container .ranking:hover {
+  -webkit-animation: scaleAnimate 1s linear infinite;
+          animation: scaleAnimate 1s linear infinite;
+}
+
+@-webkit-keyframes mapAnimate {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes mapAnimate {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes scaleAnimate {
+  0% {
+    -webkit-transform: scale(1) rotate(0deg);
+            transform: scale(1) rotate(0deg);
+  }
+  50% {
+    -webkit-transform: scale(1.1) rotate(5deg);
+            transform: scale(1.1) rotate(5deg);
+  }
+  70% {
+    -webkit-transform: scale(1.1) rotate(5deg);
+            transform: scale(1.1) rotate(5deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(0deg);
+            transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes scaleAnimate {
+  0% {
+    -webkit-transform: scale(1) rotate(0deg);
+            transform: scale(1) rotate(0deg);
+  }
+  50% {
+    -webkit-transform: scale(1.1) rotate(5deg);
+            transform: scale(1.1) rotate(5deg);
+  }
+  70% {
+    -webkit-transform: scale(1.1) rotate(5deg);
+            transform: scale(1.1) rotate(5deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(0deg);
+            transform: scale(1) rotate(0deg);
+  }
+}
+/*# sourceMappingURL=mainscreen.css.map */

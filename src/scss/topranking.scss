@@ -1,0 +1,72 @@
+@import './mixing';
+.top-wrap{
+    max-width: 100%;
+    min-height: 100vh;
+    padding: 10px;
+    margin: auto;
+    position: relative;
+    .top-title{
+        text-align: center;
+        padding: 50px;
+    }
+    background-image: url('../asset/gif/2yqT.gif');
+     background-repeat: repeat-x repeat-y;
+
+    .top-btns{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 100px;
+        cursor: pointer;
+        .btn{
+            width: 200px;
+            text-align: center;
+
+            p{
+                font-size: 18px;
+                font-weight: bold;
+            }
+        }
+    }
+    .top-modal-wrap{
+        display: none;
+    }
+    .top-modal{
+        position: fixed;
+        width: 900px;
+        height: 400px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        padding: 10px;
+        background-color: beige;
+        .top-modal-close{
+            position: absolute;
+            top: 0;
+            right: 10px;
+            cursor: pointer;
+        }
+        .top-congra{
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 100px;
+            background: transparent;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .top-box{
+            width: 370px;
+            height: 270px;
+            background-color: blue;
+        }
+    }
+}

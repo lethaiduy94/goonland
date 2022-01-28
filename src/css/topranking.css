@@ -1,0 +1,95 @@
+.top-wrap {
+  max-width: 100%;
+  min-height: 100vh;
+  padding: 10px;
+  margin: auto;
+  position: relative;
+  background-image: url("../asset/gif/2yqT.gif");
+  background-repeat: repeat-x repeat-y;
+}
+
+.top-wrap .top-title {
+  text-align: center;
+  padding: 50px;
+}
+
+.top-wrap .top-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 100px;
+  cursor: pointer;
+}
+
+.top-wrap .top-btns .btn {
+  width: 200px;
+  text-align: center;
+}
+
+.top-wrap .top-btns .btn p {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.top-wrap .top-modal-wrap {
+  display: none;
+}
+
+.top-wrap .top-modal {
+  position: fixed;
+  width: 900px;
+  height: 400px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 10px;
+  background-color: beige;
+}
+
+.top-wrap .top-modal .top-modal-close {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  cursor: pointer;
+}
+
+.top-wrap .top-modal .top-congra {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100px;
+  background: transparent;
+}
+
+.top-wrap .top-modal .top-congra img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.top-wrap .top-modal .top-box {
+  width: 370px;
+  height: 270px;
+  background-color: blue;
+}
+/*# sourceMappingURL=topranking.css.map */
