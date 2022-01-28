@@ -76,7 +76,7 @@ export default function AllFlower() {
                 <>
                     {students.map((student, index) =>{
                         return(
-                            <Student2 state = {stateAllFlower} data ={student} />
+                            <Student2 key={index} state = {stateAllFlower} data ={student} />
                         )
                     })}
                 </>
