@@ -25,9 +25,9 @@ export default function Flower({codeAverage, planAverage, designAverage, communi
     const initial = () =>{
         if(score1 == 0 && score2 == 0 && score3 == 0 && score4 == 0 && score5 ==0){
             return(
-                <div>
+                <div className='img-initial'>
 
-                     <img className='img-initial' src={initialFlower}></img>
+                     <img className='img-initial-box' src={initialFlower}></img>
                 </div>
                 
             )

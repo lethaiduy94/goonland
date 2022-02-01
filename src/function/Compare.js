@@ -98,3 +98,15 @@ export function comparePlan(a, b) {
     }
     return comparison;
   }
+  export function compareTotal2(a, b) {
+    const bandA = a.totalScore;
+    const bandB = b.totalScore;
+    
+    let comparison = 0;
+    if (bandA > bandB) {
+      comparison = -1;
+    } else if (bandA < bandB) {
+      comparison = 1;
+    }
+    return comparison;
+  }

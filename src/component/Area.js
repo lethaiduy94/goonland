@@ -7,6 +7,7 @@ import Student from '../component/area/Student'
 //images
 // import background from '../asset/images/eat-background5.svg'
 export default function Area(props) {
+    const audioArea = props.areaAudio
     const area = props.area;
     const tl = useRef();
     const image = props.image;
@@ -27,6 +28,7 @@ export default function Area(props) {
             const sortArray = studentsArray.sort(compareID)
             setStudents(sortArray);
         })
+        
 
     }, [data , area])
     
@@ -42,7 +44,26 @@ export default function Area(props) {
 
     }, [])
     
+    useEffect(()=>{
+
+        const audio = new Audio(audioArea)
+        if(currentArea == props.index ){
+            audio.play();
+            audio.addEventListener('ended', () => audio.play())
+            if(!state){
+                audio.pause();
+            }
+        }
+        
+        return()=>{
+            audio.pause();
+            audio.removeEventListener('ended', () => audio.play())
+        }
+
+    },[currentArea, state])
+
     const handleMap = () =>{
+
         props.mapMove(props.index)
         
     }
@@ -71,7 +92,9 @@ export default function Area(props) {
 
     }
     return (
+        
         <div onClick={!state ? handleMap : null} ref={props.inerRef} className='area'>
+            
             {
                 state && <div className='area-background'>
                             <img className='area-background-img' src={areaBackground}></img>
@@ -81,6 +104,15 @@ export default function Area(props) {
                  <img className='area-img' src={image}></img>
             </div>
             { loadData()}
+            {state &&
+                <div className='area-board'>
+                    <div className='area-content'> 
+                        <span className='area-title'>{area}</span>
+                        <p>デザインチーム</p>
+                    </div>
+                </div>
+            }
         </div>
+        
     )
 }

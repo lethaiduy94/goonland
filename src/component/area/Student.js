@@ -1,6 +1,6 @@
 import React, { useRef} from 'react'
 import {gsap} from "gsap";
-import audio2 from '../../asset/audio/audio2.wav'
+import audio2 from '../../asset/audio/buttonEffect.mp3'
 import Flower from '../Flower'
 //image
 
@@ -9,6 +9,7 @@ import red from '../../asset/flower/5_flower_right.svg'
 import white from '../../asset/leaf/5_leaf_left.svg'
 import yellow from '../../asset/leaf/5_leaf_right.svg'
 import pink from '../../asset/leaf/5_leaf_right2.svg'
+import leaf from '../../asset/images/x.svg'
 //function
 import { Random } from '../../function/Random';
 
@@ -69,9 +70,9 @@ export default function Student({data, width}) {
         })
         
 
-        // var audio = new Audio(audio2);
-        // audio.load();
-        // audio.play();
+        var audio = new Audio(audio2);
+        audio.load();
+        audio.play();
         studentInforRef.current.style.display = 'block';
         
     }
@@ -87,66 +88,79 @@ export default function Student({data, width}) {
         <div style={{top:student.Coordinate !== null ? `${student.Coordinate.x}%`:randomTop, left: student.Coordinate !== null ? `${student.Coordinate.y}%`:randomLeft}}  className='student'>
             <Flower number = {student.booth_number} modalOpen = {modalOpen} codeAverage={codeAverage} planAverage={planAverage} designAverage = { designAverage} communicationAverage = {communicationAverage} presentationAverage = {presentationAverage} />
                 <div style={{top: widthMobile > 319 && widthMobile < 426 && student.coordinate_mobile !== null ? `${student.coordinate_mobile.x}%`:'-110%',
-                            left: widthMobile > 319 && widthMobile < 426 && student.coordinate_mobile !== null ? `${student.coordinate_mobile.y}%`:'90%'
+                            left: widthMobile > 319 && widthMobile < 426 && student.coordinate_mobile !== null ? `${student.coordinate_mobile.y}%`:'90%',
+                            backgroundColor : student.student_number.includes('20aw') ? '#edf1f4' : '#fcf2f0',
 
                  }} ref={studentInforRef}  className='student-infor'>
+                 <div style={{borderColor: student.student_number.includes('20aw') ? 'transparent #edf1f4 transparent transparent' : 'transparent #fcf2f0 transparent transparent' }} className='student-infor-triangle'></div>
                 <div onClick={modalClose} className='student-close'>
-                    <img src={red}></img>
+                    <img src={leaf}></img>
                 </div>
+                <div className='student-infor-layout'>
 
 
                     <div className='student-infor-header'>
                         <div className='student-number'>
-                            <p>ブース番号</p>
-                            <span>{student.booth_number}</span>
+                            <p>{student.student_number.includes('20aw') ? '二年生':'一年生'}</p>
+                            
                         </div>
                         <div className='student-name'>
-                            <p style={{fontSize:'18px'}}>{student.name}</p>
+                            <p style={{fontSize:'24px'}}>{student.name}</p>
                         </div>
                     </div>
-                    <p className='student-title'>タイトル:<span>{student.title}</span></p>
-                    <p style={{fontWeight:'bold'}}>送っていただいた評価の平均値</p>
+                    <p className='student-power' style={{fontWeight:'bold'}}>この学生の強み</p>
                     
                     <div className='student-info-body'>
                         <ul className='student-score'>
-                            <li>
-                                <div className='score-icon'>
-                                    <img src={yellow}></img>
+                            <li style={{display: designAverage == 5 ? 'block': 'none'}}>
+                                <div className='student-score-content'>
+                                    <div className='score-icon'>
+                                        <img src={yellow}></img>
+                                    </div>
+                                    <span>UIデザイン力</span>
+                                    {/* <p>{designAverage}</p> */}
                                 </div>
-                                <span>UIデザイン力</span>
-                                <p>{designAverage}</p>
                             </li>
-                            <li>
-                                <div className='score-icon'>
-                                    <img src={pink}></img>
+                            <li style={{display: planAverage == 5 ? 'block': 'none'}}>
+                                <div className='student-score-content'>
+                                    <div className='score-icon'>
+                                        <img src={pink}></img>
+                                    </div>
+                                    <span>企画力</span>
+                                    {/* <p>{planAverage}</p> */}
                                 </div>
-                                <span>企画力</span>
-                                <p>{planAverage}</p>
                             </li>
-                            <li>
-                                <div className='score-icon'>
-                                    <img src={red}></img>
+                            <li style={{display: presentationAverage == 5 ? 'block': 'none'}}>
+                                <div className='student-score-content'>
+                                    <div className='score-icon'>
+                                        <img src={red}></img>
+                                    </div>
+                                    <span>プレゼンテーション力</span>
+                                    {/* <p>{presentationAverage}</p> */}
                                 </div>
-                                <span>プレゼンテーション力</span>
-                                <p>{presentationAverage}</p>
                             </li>
-                            <li>
-                                <div className='score-icon'>
-                                    <img src={orange}></img>
+                            <li style={{display: codeAverage == 5 ? 'block': 'none'}}>
+                                <div className='student-score-content'>
+                                    <div className='score-icon'>
+                                        <img src={orange}></img>
+                                    </div>
+                                    <span>実装力</span>
+                                    {/* <p>{codeAverage}</p> */}
                                 </div>
-                                <span>実装力</span>
-                                <p>{codeAverage}</p>
                             </li>
-                            <li>
-                                <div className='score-icon'>
-                                    <img src={white}></img>
+                            <li style={{display: communicationAverage == 5 ? 'block': 'none'}}>
+                                <div className='student-score-content'>
+                                    <div className='score-icon'>
+                                        <img src={white}></img>
+                                    </div>
+                                    <span>ビジネスマナー</span>
+                                    {/* <p>{communicationAverage}</p> */}
                                 </div>
-                                <span>ビジネスマナー</span>
-                                <p>{communicationAverage}</p>
                             </li>
                             
                         </ul>
                     </div>
+                </div>
                 </div>
 
         </div>

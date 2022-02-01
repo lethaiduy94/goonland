@@ -8,6 +8,7 @@ import useWindowDimensions from '../function/useWindowDimensions'
 // import audio from '../asset/audio/background-audio.mp3'
 import audio from '../asset/audio/background-audio3.mp3'
 import {useAudio } from '../function/Audio'
+import areaAudio from '../asset/audio/index';
 //images
 
 import images from "../asset/images/index";
@@ -21,6 +22,9 @@ import flower5 from '../asset/leaf/5_leaf_right2.svg'
 import logo from '../asset/logo/logo.png'
 import playBtn from '../asset/images/play.svg';
 import pauseBtn from '../asset/images/pause.svg';
+import bench from '../asset/images/bench.svg';
+import foutain from '../asset/images/foutain.svg';
+import light from '../asset/images/light.svg'
 //components
 import Area from '../component/Area';
 import Maps from '../component/Maps';
@@ -38,8 +42,12 @@ export default function MainScreen() {
     const [currenting, setCurrenting] = useState(7);
     const [students, setStudents] = useState([]);
     const {  width } = useWindowDimensions();
-    
-    
+
+    const [date, setDate] =useState(0);
+    const [month, setMonth] =useState(0);
+    const [hours, setHours] =useState(0);
+    const [minutes, setMinutes] =useState(0);
+    const [seconds, setSeconds] =useState(0);
     //useEffect
     useEffect(() => {
         
@@ -50,7 +58,6 @@ export default function MainScreen() {
                     method:'GET',
                     url:`https://quiet-sands-58722.herokuapp.com/students`
                 })
-                console.log(studentData.data)
                 setStudents(studentData.data)
             } catch (error) {
                 console.log(error)
@@ -58,13 +65,13 @@ export default function MainScreen() {
         }
 
         fetchData()
-        // const realTimeId = setInterval(() => {
-        //     fetchData()
+        const realTimeId = setInterval(() => {
+            fetchData()
                 
-        //     }, 10000);
-        //     return () => {
-        //         clearInterval(realTimeId)
-        //     }
+            }, 10000);
+            return () => {
+                clearInterval(realTimeId)
+            }
     }, [])
 
     const tl = useRef();
@@ -94,6 +101,8 @@ export default function MainScreen() {
         }
     }
     const mapMove = (index) =>{
+
+
         
         const xy = i2xy(index)
         
@@ -122,9 +131,9 @@ export default function MainScreen() {
         setCurrenting(index)
     }
 
-
+    //map zoomOut
     const zoomOut = ()=>{
-        
+       
         if(mainScreen.current.style.width === '300vw' && mainScreen.current.style.height === '200vh')
         gsap.to(mainScreen.current,1,{width: 100 + 'vw', height: 100 + 'vh'});
         
@@ -142,22 +151,85 @@ export default function MainScreen() {
             y : 0 + 'vh',
         })
         setState(false)
+        
     }
 
+    //time
+
+    useEffect(() => {
+        const watch = setInterval(() => {
+
+            var now = new Date();
+
+            var hours = conver(now.getHours());
+            var minutes = conver(now.getMinutes());
+            var seconds = conver(now.getSeconds());
+             setDate(now.getDate());
+             setMonth(now.getMonth());
+             setHours(hours);
+             setMinutes(minutes);
+             setSeconds(seconds);
+
+            
+            
+        }, 1000);
+        function conver (x){
+            if(x < 10){
+                return `0${x}`
+            }else{
+                return `${x}`
+            }
+        }
+        return() =>{
+            clearInterval(watch)
+        }
+    }, [])
  
 
     
     return (
+        
+        
         <div ref={mainContainer} className='container'>
+          {
+              !state && <div style={{backgroundColor: hours > 7 && hours < 16 ? '#bbeda0' : '#08044b',
+                                    boxShadow: hours > 7 && hours < 16 ? '0px 0px 0 5000px #bbeda0' : '0px 0px 0 5000px #08044b' }} className='container-filter'>
+
+              </div>
+          }
             {/* logo */}
             {state && <div className='backBtn' onClick={zoomOut}>
                 <div className='backBtn-box'><img className='logo' src={logo}></img></div>
             </div>}
-            <div onClick={toggle} className='audio-background'>
-                {/* <button onClick={toggle}>{playing ? "Pause" : "Play"}</button> */}
-                <img className='audio-btn' src={playing ? pauseBtn : playBtn}></img>
-            </div>
-            <div style={{opacity : state ? 0: 1}} className='goon'><p>GO ON LAND</p></div>
+            {!state && <div onClick={toggle} className='audio-background'>
+                            <img className='audio-btn' src={playing ? pauseBtn : playBtn}></img>
+                        </div>}
+            {!state && <div className='bench'>
+                <img src={bench}></img>
+                <img src={bench}></img>
+            </div>}
+
+            {!state && <div className='foutain'>
+                <img src={foutain}></img>
+            </div>}
+            {!state && <div  className='light'>
+                <div style={{display :hours > 7 && hours < 16 ? 'none' : 'block'}} className='light-shadow'></div>
+                <img src={light}></img>
+                <img src={light}></img>
+            </div>}
+            {!state &&<div className='light light2'>
+                <div style={{display :hours > 7 && hours < 16 ? 'none' : 'block'}} className='light-shadow'></div>
+                <img src={light}></img>
+                <img src={light}></img>
+            </div>}
+            {!state &&<div className='light light3'>
+                <div style={{display :hours > 7 && hours < 16 ? 'none' : 'block'}} className='light-shadow'></div>
+                <img src={light}></img>
+                <img src={light}></img>
+            </div>}
+            <div style={{display : state ? "none": "block",}} className='goon'>
+            <p style={{backgroundColor:hours > 7 && hours < 16 ? '#0f360f' : '#08044b',
+                        textShadow:hours > 7 && hours < 16 ? ' 2px 3px 4px #baeda2' : ' 2px 3px 4px #85a788' }}>GO ON LAND</p></div>
             {/* 6 area */}
             <ButterFly top = {0} left  = {0} z ={ 400} />
             <ButterFly top = '50%' left  = '50%' z ={600}  rotateY = {180} rotateX = {0}/>
@@ -168,6 +240,7 @@ export default function MainScreen() {
             <ButterFly top = '15%' left = '30%' z = { 400} rotateY = {180} rotateX={ 50}/>
             
             <div ref={mainScreen} className='main-screen'>
+            
                 {
                     areas.map((area, index) =>{
                         return(
@@ -184,6 +257,7 @@ export default function MainScreen() {
                                     data = {students}
                                     width = {width}
                                     areaBackground = {areaBackground[index]}
+                                    areaAudio={areaAudio[index]}
                                     >
                                 </Area>
                             
@@ -211,7 +285,7 @@ export default function MainScreen() {
 
             {/* 来場者の数 */}
             {
-                !state && <Visitor />
+                !state && <Visitor date= {date} month = {month} hours = {hours} minutes = {minutes} seconds = {seconds} />
             }
 
             
@@ -359,5 +433,6 @@ export default function MainScreen() {
                     }}
                 />
         </div>
+        
     )
 }

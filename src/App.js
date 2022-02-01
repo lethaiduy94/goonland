@@ -14,11 +14,11 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path = "/" element = {<MainScreen />}></Route>
-        <Route path = "/flower" element = {<Flower />}></Route>
-        <Route path = "/ranking" element = {<Ranking2 />}></Route>
-        <Route path = "/topranking" element = {<TopRanking />}></Route>
-        <Route path = "/allflower" element = {<AllFlower />}></Route>
+        <Route path = "hyoka_test/" element = {<MainScreen />}></Route>
+        <Route path = "/hyoka_test/flower" element = {<Flower />}></Route>
+        <Route path = "/hyoka_test/ranking" element = {<Ranking2 />}></Route>
+        <Route path = "/hyoka_test/topranking" element = {<TopRanking />}></Route>
+        <Route path = "/hyoka_test/allflower" element = {<AllFlower />}></Route>
       </Routes>
     </Router>
   );

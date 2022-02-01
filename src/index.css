@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@font-face {
+  font-family: "ZenAntique";
+  src: local("ZenAntique"),
+   url("./fonts/ZenAntique/ZenAntique-Regular.ttf") format("truetype");
+  font-weight: bold;
+  }

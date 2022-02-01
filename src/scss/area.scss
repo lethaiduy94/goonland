@@ -11,7 +11,8 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  
+  z-index: 2;
+
   .area-background{
       position: absolute;
       width: 100%;
@@ -34,9 +35,14 @@
     cursor: pointer;
     position: absolute;
     bottom: 7%;
-    z-index: 0;
+    z-index: 2;
     opacity: 1;
     transition: 1s ease-in-out;
+    
+    &:hover{
+      transform: scale(1.1);
+      animation: mapItemAnimate 5s infinite linear;
+    }
     &.active {
       width: 36%;
       height: 36%;
@@ -63,16 +69,16 @@
     transition: 1.5s;
     transition-delay: 3s;
     animation: animate 2s ease-in-out forwards;
-    z-index: 1;
+    z-index: 3;
     .student {
       position: absolute;
       top: 30%;
       left: 5%;
-
       .student-infor {
         display: none;
         position: absolute;
         width: 230px;
+        min-height: 300px;
         top: -110%;
         left: 90%;
         background-color: #ffff;
@@ -83,12 +89,27 @@
         transform: scale(0);
         transform-origin: center left 5px ;
         z-index: 10;
-
         
+        .student-infor-layout{
+          min-width: 160px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          margin: auto;
+          .student-power{
+            padding: 10px 5px;
+            margin: auto;
+            text-align: center;
 
+            border: 1px solid #000;
+            border-left: none;
+            border-right: none;
+            margin-bottom: 10px;
+          }
+        }
 
-        &::before {
-          content: "";
+        .student-infor-triangle{
           position: absolute;
           width: 0;
           height: 0;
@@ -121,27 +142,17 @@
           }
         }
         .student-infor-header {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
+          text-align: left;
+          
           .student-number {
-            flex: 0.8;
+            p{
 
-            span {
-              display: block;
-              width: 50px;
-              height: 50px;
-              border-radius: 50%;
-              background: gray;
-              text-align: center;
-              line-height: 50px;
-              font-size: 24px;
-              color: #ffff;
+              font-size: 14px;
             }
+
           }
           .student-name {
-            flex: 1;
+            margin-bottom: 10px;
           }
         }
         .student-title {
@@ -160,26 +171,33 @@
           li{
             list-style: none;
             text-align: left;
-            display: flex;
-            align-items: center;
-            span{
-              font-size: 12px;
-              font-weight: normal;
-              flex: 1;
-              margin-left: 5px;
-            }
-            p{
-              margin-right: 10px;
-            }
-            
-            .score-icon{
-              width: 30px;
-              height: 30px;
+            display: none;
 
-              img{
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
+            .student-score-content{
+
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+
+              span{
+                font-size: 12px;
+                font-weight: normal;
+                flex: 1;
+                margin-left: 5px;
+              }
+              p{
+                margin-right: 10px;
+              }
+              
+              .score-icon{
+                width: 30px;
+                height: 30px;
+  
+                img{
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
               }
             }
 
@@ -187,7 +205,7 @@
         }
         p {
           font-weight: normal;
-          font-size: 12px;
+          font-size: 18px;
           color: #000;
           display: block;
         }
@@ -202,6 +220,26 @@
   }
   @include breakpoint(mobile) {
     font-size: 20px;
+  }
+  .area-board{
+    width: 280px;
+    height: 250px;
+    position: absolute;
+    bottom: -2%;
+    left: -2%;
+    background-image: url('../asset/images/area-kanban.svg');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+    .area-content{
+      color: #ffff;
+      margin-top: 53px;
+      span{
+        font-size: 30px;
+      }
+      
+    }
   }
 }
 @keyframes animate {
