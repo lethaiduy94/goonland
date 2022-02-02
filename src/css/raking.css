@@ -150,10 +150,18 @@
   text-align: center;
   border-radius: 26px;
   z-index: 2;
-  background-image: url("../asset//images/leaderboard-background.svg");
+  background-image: url("../asset//images/grade1.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 50% 50%;
+}
+
+.ranking-container .ranking-container-box.grade2 {
+  background-image: url("../asset//images/grade2.svg");
+}
+
+.ranking-container .ranking-container-box.grade2 .ranking-team {
+  background-image: url("../asset/images/btn2.svg");
 }
 
 .ranking-container .ranking-container-box .ranking-header {
@@ -210,6 +218,7 @@
 }
 
 .ranking-container .ranking-container-box .ranking-players li {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -237,10 +246,31 @@
   padding: 20px 5px 20px 5px;
 }
 
+.ranking-container .ranking-container-box .ranking-players li:first-child .player-number1 {
+  width: 90px;
+  height: 90px;
+  left: -14%;
+}
+
 .ranking-container .ranking-container-box .ranking-players li .player-number {
   font-size: 20px;
   font-weight: bolder;
   font-weight: bold;
+}
+
+.ranking-container .ranking-container-box .ranking-players li .player-number1 {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: -8%;
+  top: -21%;
+}
+
+.ranking-container .ranking-container-box .ranking-players li .player-number1 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .ranking-container .ranking-container-box .ranking-players li .player-name {
@@ -296,7 +326,7 @@
   left: 28%;
   width: 200px;
   height: 100px;
-  background-image: url("../asset/images/kanban.svg");
+  background-image: url("../asset/images/btn1.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 50% 50%;

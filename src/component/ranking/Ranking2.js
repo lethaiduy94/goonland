@@ -2,8 +2,7 @@ import React, {useState, useEffect} from 'react'
 import Particles from "react-tsparticles";
 import axios from 'axios'
 import '../../scss/raking.scss'
-
-
+//img
 import flower from '../../asset/flower/5_flower_left.svg'
 import flower2 from '../../asset/flower/5_flower_right.svg'
 import flower3 from '../../asset/leaf/5_leaf_left.svg'
@@ -12,9 +11,15 @@ import flower5 from '../../asset/leaf/5_leaf_right2.svg'
 import gun from '../../asset/gif/gun2.gif'
 import minion from '../../asset/gif/bf6.gif'
 import congra from '../../asset/gif/congrats.gif'
+
+import number1 from '../../asset/images/number1.svg';
+import number2 from '../../asset/images/number2.svg';
+import number3 from '../../asset/images/number3.svg';
 //function
 import { compareTotal2} from '../../function/Compare'
-
+//audio
+import {useAudio} from '../../function/Audio';
+import audio from '../../asset/audio/rankingaudio.mp3'
 
 export default function Ranking2() {
     //tabs state
@@ -26,11 +31,11 @@ export default function Ranking2() {
     const [open1, setOpen1] = useState(false)// mo cai bang 1
     const [open2, setOpen2] = useState(false)// mo cai bang 2
     const [open3, setOpen3] = useState(false)// mo 2 cai bang
+    const [playing, toggle] = useAudio(audio);
 
+    var setDate = new Date('02 03 2022 13:30:0');// time start
 
-    var setDate = new Date('01 29 2022 1:15:0');// time start
-
-    var setDate2 = new Date ('01 29 2022 1:33:0');// time end
+    var setDate2 = new Date ('02 03 2022 4:00:0');// time end
     
     // useEffect(() => {
     //     const fetchData = async () =>{
@@ -250,9 +255,12 @@ export default function Ranking2() {
                     {students.slice(0,3).map((student, index) =>{
                         return(
                             <li style={{opacity: index === 0 && open1 ? 1 : index !== 0 ? 1 : 0}} key={index}>
-                                <p className='player-number'>{index + 1}</p>
+                                {/* <p className='player-number'>{index + 1}</p> */}
+                                <div className='player-number1'>
+                                    <img src={index === 0 ? number1 : index === 1 ? number2 : index ===2 ? number3 : number1}></img>
+                                </div>
                                 <p className='player-name'>{student.name}</p>
-                                <p className='player-score'>{student.totalScore}</p>
+                                <p  className='player-score'>{student.totalScore}</p>
                             </li>
                         )
                     })}
@@ -280,9 +288,12 @@ export default function Ranking2() {
                     {students2.slice(0,3).map((student, index) =>{
                         return(
                             <li style={{opacity: index === 0 && open2 ? 1 : index !== 0 ? 1 : 0}} key={index}>
-                                <p className='player-number'>{index + 1}</p>
+                                {/* <p className='player-number'>{index + 1}</p> */}
+                                <div className='player-number1'>
+                                    <img src={index === 0 ? number1 : index === 1 ? number2 : index ===2 ? number3 : number1}></img>
+                                </div>
                                 <p className='player-name'>{student.name}</p>
-                                <p className='player-score'>{student.totalScore}</p>
+                                <p  className='player-score'>{student.totalScore}</p>
                             </li>
                         )
                     })}
@@ -306,6 +317,7 @@ export default function Ranking2() {
         setOpen2(true)
     }
     const handleOpen3 = () =>{
+        toggle();
         setOpen3(!open3)
     }
     return (

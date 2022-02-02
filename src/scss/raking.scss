@@ -129,19 +129,26 @@
         text-align: center;
         border-radius: 26px;
         z-index: 2;
-        background-image: url('../asset//images/leaderboard-background.svg');
-        // background-image: url('../asset//images/grade1.svg');
+        // background-image: url('../asset//images/leaderboard-background.svg');
+        background-image: url('../asset//images/grade1.svg');
         background-repeat: no-repeat;
         background-size: contain;
         background-position:50% 50%;
         
-        // &.grade2{
-        //     background-image: url('../asset//images/grade2.svg');
+        //hoc sinh nam 2
+        &.grade2{
+            background-image: url('../asset//images/grade2.svg');
 
-        //     .ranking-team{
-        //         background-image: url('../asset/images/btn2.svg');
-        //     }
-        // }
+            .ranking-team{
+                background-image: url('../asset/images/btn2.svg');
+                color: #ffffff;
+                text-shadow: 1px 2px 3px #6e3f3f;
+            }
+            .ranking-header {
+                color: #ffffff;
+                text-shadow: 1px 2px 3px #6e3f3f;
+            }
+        }
 
 
         .ranking-header{
@@ -191,6 +198,7 @@
                 width: 100%;
             }
             li{
+                position: relative;
                 display: flex;
                 list-style: none;
                 align-items: center;
@@ -207,6 +215,13 @@
                 transition-delay: 6s;
                 &:first-child{
                     padding: 20px 5px 20px 5px;
+
+                    .player-number1{
+                        width: 90px;
+                        height: 90px;
+                        left: -14%;
+
+                    }
                 }
                 
                 .player-number{
@@ -214,6 +229,20 @@
                     font-size: 20px;
                     font-weight: bolder;
                     font-weight: bold;
+                }
+                .player-number1{
+                    position: absolute;
+                    width: 50px;
+                    height: 50px;
+                    left: -8%;
+                    top: -21%;
+                    
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+                   
                 }
                 .player-name{
                     display: block;
@@ -266,8 +295,8 @@
             left: 28%;
             width: 200px;
             height: 100px;
-            background-image: url('../asset/images/kanban.svg');
-            // background-image: url('../asset/images/btn1.svg');
+            // background-image: url('../asset/images/kanban.svg');
+            background-image: url('../asset/images/btn1.svg');
             background-repeat: no-repeat;
             background-size: contain;
             background-position:50% 50%;
