@@ -8,6 +8,7 @@
   background-position: 50% 50%;
   background-size: 250% 250%;
   font-family: ZenAntique;
+  cursor: none;
 }
 
 .container .container-filter {
@@ -21,6 +22,7 @@
   left: 0;
   -webkit-box-shadow: 0px 0px 0 5000px #bbeda0;
           box-shadow: 0px 0px 0 5000px #bbeda0;
+  z-index: 2;
 }
 
 @media screen and (max-width: 426px) {
@@ -30,6 +32,25 @@
   }
 }
 
+.container .cursor {
+  position: absolute;
+  width: 50px;
+  height: 110px;
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border: 2px solid #0000;
+  z-index: 11;
+  top: 50%;
+  left: 50%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-image: url("../asset/images/cursor2.png");
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .container .backBtn {
   width: 80px;
   height: 80px;
@@ -37,7 +58,7 @@
   top: 6px;
   left: 6px;
   z-index: 10;
-  background-color: #80b55e;
+  background-color: #FDFDF5;
   padding: 5px;
   border-radius: 50%;
   text-align: center;
@@ -50,14 +71,14 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-shadow: 2px 3px 0px 2px #599633;
-          box-shadow: 2px 3px 0px 2px #599633;
-  cursor: pointer;
+  -webkit-box-shadow: 2px 3px 0px 2px #C7C7C7;
+          box-shadow: 2px 3px 0px 2px #C7C7C7;
+  cursor: none;
 }
 
 .container .backBtn:hover {
-  -webkit-box-shadow: inset 2px 3px 0px 2px #599633;
-          box-shadow: inset 2px 3px 0px 2px #599633;
+  -webkit-box-shadow: inset 2px 3px 0px 2px #C7C7C7;
+          box-shadow: inset 2px 3px 0px 2px #C7C7C7;
 }
 
 .container .backBtn .backBtn-box {
@@ -184,6 +205,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  z-index: 2;
 }
 
 .container .light .light-shadow {
@@ -249,6 +271,11 @@
   background-size: contain;
 }
 
+.container .map-container:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 @media screen and (max-width: 426px) {
   .container .map-container {
     -webkit-transform: scale(0.7) translate(22%, 28%);
@@ -283,8 +310,8 @@
 }
 
 .container .victor {
-  width: 350px;
-  height: 230px;
+  width: 370px;
+  height: 250px;
   position: absolute;
   top: -5%;
   left: 5px;
@@ -333,7 +360,7 @@
   background-image: url("../asset/images/crown.png");
   background-repeat: no-repeat;
   background-size: cover;
-  cursor: pointer;
+  cursor: none;
   z-index: 10;
 }
 

@@ -1,0 +1,21 @@
+.light-container{
+    position: absolute;
+    width: 20px;
+    height: auto;
+    top: 35%;
+    left: 90%;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    .light-shadow2{
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: #ffff03cf;
+        border-radius: 50%;
+        z-index: 0;
+        top: -22%;
+        animation: light 3s linear infinite;
+        z-index: 3;
+      }
+}

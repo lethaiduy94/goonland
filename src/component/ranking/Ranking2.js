@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import Particles from "react-tsparticles";
 import axios from 'axios'
 import '../../scss/raking.scss'
@@ -24,6 +24,7 @@ import audio from '../../asset/audio/rankingaudio.mp3'
 export default function Ranking2() {
     //tabs state
     //useRef
+    const cursor2 = useRef(null)
     const [students, setStudents] = useState([])
     const [students2, setStudents2] = useState([])
 
@@ -33,9 +34,9 @@ export default function Ranking2() {
     const [open3, setOpen3] = useState(false)// mo 2 cai bang
     const [playing, toggle] = useAudio(audio);
 
-    var setDate = new Date('02 03 2022 13:30:0');// time start
+    var setDate = new Date('02 03 2022 10:00:0');// time start
 
-    var setDate2 = new Date ('02 03 2022 4:00:0');// time end
+    var setDate2 = new Date ('02 05 2022 13:00:0');// time end
     
     // useEffect(() => {
     //     const fetchData = async () =>{
@@ -63,7 +64,19 @@ export default function Ranking2() {
     //             clearInterval(realTimeId)
     //         }
     // }, [])
+    useEffect(() =>{
 
+        document.addEventListener('mousemove', handleMouse)
+        function handleMouse(e){
+            var x = e.clientX;
+            var y = e.clientY;
+            cursor2.current.style.left = x + 30 +  'px';
+            cursor2.current.style.top = y + 30 + 'px';
+        }
+        return () =>{
+        document.removeEventListener('mousemove',handleMouse)
+        }
+    },[])
     useEffect(() => {
         const fetchData = async () =>{
 
@@ -322,6 +335,7 @@ export default function Ranking2() {
     }
     return (
         <div className='ranking-wrap'>
+         <div ref={cursor2} className='cursor2'></div>
             <div style = {{display : open3 ? 'none': 'block'}} className='ranking-background'>
                 <div className='ranking-square'></div>
             </div>

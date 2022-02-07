@@ -22,17 +22,36 @@ export default function Student({data, width}) {
     var designAverage = 0;
     var presentationAverage = 0;
     var communicationAverage = 0;
+
+    
     const randomTop = Random(20,60) + '%';
     const randomLeft = Random(0,70) + '%';
 
     if(typeof student.evalutions !== 'undefined' && student.evalutions.length !== 0){
         
         const studentArrayLenghth = data.evalutions.length
-         codeAverage = Math.round((student.total_scores.code / studentArrayLenghth));
-         planAverage = Math.round((student.total_scores.plan / studentArrayLenghth));
-         designAverage = Math.round((student.total_scores.design / studentArrayLenghth));
-         presentationAverage = Math.round((student.total_scores.presentation / studentArrayLenghth));
-         communicationAverage = Math.round((student.total_scores.communication / studentArrayLenghth));
+
+        const codeAverage2 = student.evalutions.reduce((acc, cur)=>{
+            return acc + cur.code;
+        },0)
+        const planAverage2 = student.evalutions.reduce((acc, cur)=>{
+            return acc + cur.plan;
+        },0)
+        const designAverage2 = student.evalutions.reduce((acc, cur)=>{
+            return acc + cur.design;
+        },0)
+        const presentationAverage2 = student.evalutions.reduce((acc, cur)=>{
+            return acc + cur.presentation;
+        },0)
+        const communicationAverage2 = student.evalutions.reduce((acc, cur)=>{
+            return acc + cur.communication;
+        },0)
+
+         codeAverage = Math.round((codeAverage2 / studentArrayLenghth));
+         planAverage = Math.round((planAverage2 / studentArrayLenghth));
+         designAverage = Math.round((designAverage2 / studentArrayLenghth));
+         presentationAverage = Math.round((presentationAverage2 / studentArrayLenghth));
+         communicationAverage = Math.round((communicationAverage2 / studentArrayLenghth));
     
     }
     

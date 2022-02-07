@@ -48,7 +48,22 @@ export default function MainScreen() {
     const [hours, setHours] =useState(0);
     const [minutes, setMinutes] =useState(0);
     const [seconds, setSeconds] =useState(0);
+
+    const cursor = useRef(null)
     //useEffect
+    useEffect(() =>{
+
+        document.addEventListener('mousemove', handleMouse)
+        function handleMouse(e){
+            var x = e.clientX;
+            var y = e.clientY;
+            cursor.current.style.left = x + 30 +  'px';
+            cursor.current.style.top = y + 30 + 'px';
+        }
+        return () =>{
+        document.removeEventListener('mousemove',handleMouse)
+        }
+    },[])
     useEffect(() => {
         
         const fetchData = async () =>{
@@ -191,15 +206,19 @@ export default function MainScreen() {
         
         
         <div ref={mainContainer} className='container'>
-          {
-              !state && <div style={{backgroundColor: hours > 7 && hours < 16 ? '#bbeda0' : '#08044b',
+          
+              
+                   <div style={{backgroundColor: hours > 7 && hours < 16 ? '#bbeda0' : '#08044b',
                                     boxShadow: hours > 7 && hours < 16 ? '0px 0px 0 5000px #bbeda0' : '0px 0px 0 5000px #08044b' }} className='container-filter'>
 
-              </div>
-          }
+                </div>
+              
+          
+          <div ref={cursor} className='cursor'></div>
             {/* logo */}
             {state && <div className='backBtn' onClick={zoomOut}>
                 <div className='backBtn-box'><img className='logo' src={logo}></img></div>
+                {/* <div className='backBtn-shadow'></div> */}
             </div>}
             {!state && <div onClick={toggle} className='audio-background'>
                             <img className='audio-btn' src={playing ? pauseBtn : playBtn}></img>
@@ -258,6 +277,7 @@ export default function MainScreen() {
                                     width = {width}
                                     areaBackground = {areaBackground[index]}
                                     areaAudio={areaAudio[index]}
+                                    hours = {hours}
                                     >
                                 </Area>
                             

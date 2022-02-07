@@ -12,6 +12,7 @@
   background-position:50% 50%;
   background-size: 250% 250%;
   font-family: ZenAntique;
+  cursor: none;
   .container-filter{
     // display: none;
     opacity:0.3;
@@ -23,10 +24,28 @@
     bottom: 0;
     left: 0;
     box-shadow:0px 0px 0 5000px #bbeda0;
+    z-index: 2;
   }
   @include breakpoint(mobile){
     background-image: unset;
     background-color: #baeda2;
+  }
+  .cursor{
+    position: absolute;
+    width: 50px;
+    height: 110px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #0000;
+    z-index: 11;
+    top: 50%;
+    left: 50%;
+    box-sizing: border-box;
+    background-image: url('../asset/images/cursor2.png');
+    background-position: 50% 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+
   }
   .backBtn {
     width: 80px;
@@ -35,18 +54,34 @@
     top: 6px;
     left: 6px;
     z-index: 10;
-    background-color: #80b55e;
+    background-color: #FDFDF5;
     padding: 5px;
     border-radius: 50%;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 2px 3px 0px 2px #599633;
-    cursor: pointer;
+    box-shadow: 2px 3px 0px 2px #C7C7C7;
+    cursor: none;
     &:hover{
-      box-shadow: inset 2px 3px 0px 2px #599633;
+      box-shadow: inset 2px 3px 0px 2px #C7C7C7;
     }
+    // .backBtn-shadow{
+    //   position: absolute;
+    //   top: 50%;
+    //   left: 50%;
+    //   width: 100px;
+    //   height: 100px;
+    //   background-color: #ffff03cf;
+    //   border-radius: 50%;
+    //   z-index: 0;
+    //   // animation: light 3s linear infinite;
+    //   transform: translate(-50%, -50%);
+    //   box-shadow:0px 0px 0 50px #ffff03cf,
+    //   0px 0px 0px 100px #ffff03cf,
+    //   0px 0px 0px 150px #ffff03cf,
+    //   0px 0px 0px 200px #ffff03cf;
+    // }
     .backBtn-box{
       width: 60px;
       height: 50px;
@@ -147,6 +182,7 @@
     left: 90%;
     display: flex;
     justify-content: center;
+    z-index: 2;
     .light-shadow{
       position: absolute;
       width: 100px;
@@ -193,6 +229,9 @@
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: contain;
+    &:hover{
+      transform: scale(1.1);
+    }
     @include breakpoint(mobile){
       transform: scale(0.7) translate(22%, 28%);
       display: none;
@@ -218,8 +257,8 @@
   }
 
   .victor{
-    width: 350px;
-    height: 230px;
+    width: 370px;
+    height: 250px;
     position: absolute;
     top: -5%;
     left: 5px;
@@ -259,7 +298,7 @@
     background-image: url('../asset/images/crown.png');
     background-repeat: no-repeat;
     background-size: cover;
-    cursor: pointer;
+    cursor: none;
     z-index: 10;
     &:hover{
       animation: scaleAnimate 1s linear infinite;

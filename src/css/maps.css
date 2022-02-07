@@ -2,7 +2,7 @@
   width: 40px;
   height: 40px;
   margin: 5px;
-  cursor: pointer;
+  cursor: none;
   background-size: cover;
   background-repeat: no-repeat;
 }

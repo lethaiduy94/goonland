@@ -7,11 +7,13 @@ import  '../scss/flower.scss';
 
 export default function Flower({codeAverage, planAverage, designAverage, communicationAverage, presentationAverage , modalOpen, number, state}) {
     const boothNumber = number;
+    
     const score1 = codeAverage;
     const score2 = presentationAverage;
     const score3 = communicationAverage;
     const score4 = designAverage;
     const score5 = planAverage;
+
     // const [score1, setScore1] =useState(1);
     // const [score2, setScore2] =useState(1);
     // const [score3, setScore3] =useState(1);

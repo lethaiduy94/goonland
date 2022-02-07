@@ -6,9 +6,12 @@
     align-items: center;
     width: 150px;
     height: 150px;
-    cursor: pointer;
+    cursor: none;
     z-index: 1;
     // animation: flowerAnimate 2s linear infinite;
+    &:hover{
+        transform: scale(1.1);
+    }
     .img-initial{
         @include breakpoint(mobile){
 

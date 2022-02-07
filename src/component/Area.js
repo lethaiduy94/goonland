@@ -4,6 +4,7 @@ import { gsap } from 'gsap';
 import {compareID} from '../function/Compare'
 //components
 import Student from '../component/area/Student'
+import Light from './mainscreen/Light';
 //images
 // import background from '../asset/images/eat-background5.svg'
 export default function Area(props) {
@@ -95,11 +96,15 @@ export default function Area(props) {
         
         <div onClick={!state ? handleMap : null} ref={props.inerRef} className='area'>
             
+            {/* {
+                state && <Light hours={props.hours} />
+            } */}
             {
                 state && <div className='area-background'>
                             <img className='area-background-img' src={areaBackground}></img>
                         </div>
             }
+            
             <div className = {!state ? 'area-imgBox': 'area-imgBox active'}>
                  <img className='area-img' src={image}></img>
             </div>
